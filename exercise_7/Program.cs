@@ -16,7 +16,37 @@ namespace exercise_7
     {
         static void Main(string[] args)
         {
+            Int32[] array = new Int32[15];
+            UInt32 firstCounter = 0;
 
+            FillArray(ref array);
+            DisplayArray(in array, ref firstCounter);
+
+            Int32 maxElement = array.Max();
+            Console.WriteLine("\n The biggest element of array: " + maxElement);
+
+            Console.ReadLine();
+        }
+
+        static void FillArray(ref Int32[] array)
+        {
+            Random random = new Random();
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = random.Next(-15, 30);
+            }
+        }
+
+        static void DisplayArray(in Int32[] array, ref UInt32 firstCounter)
+        {
+            if (firstCounter >= array.Length)
+                return;
+
+            Console.Write($" {array[firstCounter]} ");
+
+            firstCounter++;
+            DisplayArray(in array, ref firstCounter);
         }
     }
 }
