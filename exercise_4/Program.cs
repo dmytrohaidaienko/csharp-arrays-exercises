@@ -16,6 +16,41 @@ namespace exercise_4
     {
         static void Main(string[] args)
         {
+            Int32[] array = new Int32[7];
+            FillArray(ref array);
+
+            Console.WriteLine(" This is your array with {0} elements:", array.Length);
+            DisplayArray(in array);
+
+            ChangeArray(ref array);
+
+            Console.WriteLine("\n This is your chaged array:");
+            DisplayArray(in array);
+        }
+
+        static void FillArray(ref Int32[] array)
+        {
+            Random random = new Random();
+            for (Int32 i = 0; i < array.Length; i++)
+            {
+                array[i] = random.Next(0, 10);
+            }
+        }
+
+        static void DisplayArray(in Int32[] array)
+        {
+            for (Int32 i = 0; i < array.Length; i++)
+            {
+                Console.Write($" {array[i]} ");
+            }
+        }
+
+        static void ChangeArray(ref Int32[] array)
+        {
+            for (Int32 i = 0; i < array.Length; i++)
+            {
+                array[i] = array[i] * 2;
+            }
         }
     }
 }
