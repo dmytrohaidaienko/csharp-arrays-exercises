@@ -19,14 +19,24 @@ namespace exercise_1
 
             for (Int32 i = 0; i < array.Length; i++)
             {
-                Console.WriteLine($"Please enter {i + 1} element in array: ");
+                Console.WriteLine($" Please enter {i + 1} element in array: ");
                 array[i] = Int32.Parse(Console.ReadLine());
             }
 
             for (Int32 i = 0; i < array.Length; i++)
             {
-                Console.Write($"{array[i]}, ");
+                Console.Write($" {array[i]}, ");
             }
+
+            Int32 sum = 0;
+
+            for (Int32 i = 0; i < array.Length; i++)
+            {
+                sum += array[i];
+            }
+
+            Double arrayMean = (double)sum / array.Length;
+            Console.WriteLine("\n Mean: " + arrayMean);
         }
     }
 }
