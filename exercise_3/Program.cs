@@ -15,6 +15,12 @@ namespace exercise_3
     {
         static void Main(string[] args)
         {
+            String[] array = new String[5] { "Dmytro", "Denis", "John", "Vanya", "Taras" };
+
+            for (Int32 i = array.Length - 1; i >= 0; i--)
+            {
+                Console.WriteLine(array[i]);
+            }
         }
     }
 }
