@@ -16,7 +16,7 @@ namespace exercise_23
     {
         static void Main(string[] args)
         {
-            Int32[] array = new Int32[] { 1, 2, 3, 0, -5 };
+            Int32[] array = new Int32[] { 1, 2, -3, 0, 5 };
             UInt32 counter = 0;
             Boolean t = false;
 
@@ -45,7 +45,10 @@ namespace exercise_23
                 if (array[i] >= 0)
                     t = false;
                 else
+                {
                     t = true;
+                    return;
+                }
             }
         }
     }
